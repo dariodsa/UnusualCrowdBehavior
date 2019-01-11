@@ -37,7 +37,6 @@ def effectiveVelocity(flow):
     return O
 
 def getForceFromImage(force):
-    print("Force",force)
     F=np.sqrt(force[:,:,0]**2+force[:,:,1]**2)
     F=F[1:F.shape[0]-1,1:F.shape[1]-1]  #removing corner pixels  these have not good bilinear interpolation velocities
     F*=255.0/np.max(F)
